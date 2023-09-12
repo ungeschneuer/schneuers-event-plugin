@@ -1,0 +1,471 @@
+ol, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    list-style-type: none;
+}
+
+/* dates */
+.dates h3 {
+    text-transform: uppercase;
+    margin: 0 0 30px 0;
+}
+
+.dates .dates_block {
+    margin: 0 0 80px 0;
+    display: block;
+}
+
+.dates .dates_block:last-child {
+    margin: 0;
+}
+
+.dates .dates_block .desc {
+    margin: 0 0 15px 0;
+}
+
+.dates .dates_block .desc a.text_truncate_toggle .more {
+    letter-spacing: 0;
+    font-family: inherit;
+    text-transform: none;
+}
+
+.dates .dates_block .more_dates a.button {
+    margin-bottom: 0px;
+}
+
+.dates .dateslist_holder {
+    overflow: hidden;
+}
+
+.dates .dateslist {
+    position: relative;
+    text-align: left;
+    border-top: 1px solid #000;
+    margin: 15px 0;
+}
+
+.dates .dateslist li.item {
+    text-align: left;
+    position: relative;
+    padding: 25px 10px;
+    display: table;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #000;
+}
+
+.dates .dateslist li.row1 {
+    background: rgba(0,0,0,0);
+}
+
+.dates .dateslist li.row2 {
+    background: rgba(0,0,0,0);
+}
+
+.dates .dateslist li.item:hover {
+    background: rgba(0,0,0,0.03);
+}
+
+.dates .dateslist li.has2buttons {
+}
+
+.dates .dateslist li a.deeplink {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-decoration: none;
+}
+
+.dates .dateslist li.item div {
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.dates .dateslist li.row-more {
+    display: none;
+}
+
+.dates .dateslist li .date {
+    width: 200px;
+    pointer-events: none;
+    text-transform: uppercase;
+}
+
+.dates .dateslist li .date, .dates .dateslist li .title {
+}
+
+.dates .dateslist li .cal {
+    display: inline-block;
+    margin: 0 5px 0 5px;
+    position: relative;
+    pointer-events: auto;
+    font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+}
+
+.dates .dateslist li .cal .calendar_links {
+    border: 1px solid #ccc;
+    background: var(--css_bg_color1);
+    display: none;
+    position: absolute;
+    z-index: 200;
+    left: 40px;
+    top: -40px;
+    white-space: nowrap;
+    padding: 10px 18px 10px 10px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.dates .dateslist li .cal .calendar_links ul li {
+    margin: 5px 0;
+    font-size: 15px;
+}
+
+.dates .dateslist li .cal .calendar_links ul li a:link, .dates .dateslist li .cal .calendar_links ul li a:visited {
+    color: var(--css_a_link1);
+}
+
+.dates .dateslist li .cal .calendar_links ul li a:hover, .dates .dateslist li .cal .calendar_links ul li a:active {
+    color: var(--css_a_hover1);
+}
+
+.dates .dateslist li .title {
+    width: auto;
+    pointer-events: none;
+}
+
+.dates .dateslist li .title span {
+    display: inline-block;
+}
+
+.dates .dateslist li .title span.city {
+    width: 38%;
+    text-transform: uppercase;
+    margin-right: 2%;
+    pointer-events: none;
+}
+
+.dates .dateslist li .title span.city, .dates .dateslist li .title span.venue {
+    vertical-align: middle;
+}
+
+.dates .dateslist li .title span img {
+    cursor: help;
+    border: 1px solid #666;
+    display: inline-block;
+    display: none;
+    pointer-events: all;
+    margin: 0 10px 0 0;
+}
+
+.dates .dateslist li .title span.venue {
+    width: 58%;
+}
+
+.dates .dateslist li .title span.venue a {
+    pointer-events: auto;
+}
+
+.dates .dateslist li .title span.venue a:link, .dates .dateslist li .title span.venue a:visited {
+    color: var(--css_color1);
+    border-bottom: 1px solid var(--css_color1);
+}
+
+.dates .dateslist li .title span.venue a:hover, .dates .dateslist li .title span.venue a:active {
+    color: var(--css_color1);
+    border-bottom: 1px solid var(--css_color1);
+}
+
+.dates .dateslist li .title span.venue .text {
+    width: 100%;
+    display: block;
+    margin: 5px 0 0 0;
+    font-size: 0.8em;
+    line-height: 1.2em;
+}
+
+.dates .dateslist li .title span.venue .text a {
+    text-decoration: none;
+}
+
+.dates .dateslist li .buttons {
+    width: 180px;
+    padding-left: 5px;
+}
+
+.dates .dateslist li .buttons a {
+    font-size: 20px;
+    margin: 0;
+    padding: 15px 10px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: baseline;
+}
+
+.buttons {
+    font-size: 20px;
+    margin: 0;
+    padding: 15px 10px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: baseline;
+}
+
+.info {
+    color:grey;
+    font-size: 0.88rem;
+}
+
+.dates .dateslist li .buttons a.ticket:hover, .dates .dateslist li .buttons a.ticket:active {
+}
+
+.dates .buttons a.onsale {
+    background: rgba(200,200,200,0.66);
+    padding-bottom: 22px;
+    cursor: default !important;
+    pointer-events: none;
+}
+
+.dates .buttons a.onsale .onsale_text {
+    color: #fff;
+    background: rgba(0,0,0,0.66);
+    font-size: 10px;
+    letter-spacing: 0px;
+    line-height: 12px;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+    position: absolute;
+    display: block;
+    margin: 0px;
+    padding: 3px 3px 3px 3px;
+}
+
+.dates .dateslist li .buttons a.ticket2 {
+    margin: 0 0 10px 0;
+}
+
+.dates .dateslist li .buttons a.soldout, .dates a.soldout {
+    cursor: default !important;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.dates h1 {
+    font-size: 36px;
+}
+
+.dates .subscribe {
+    margin: 5px 0 0 0;
+}
+
+.dates .desc {
+    margin: 15px 0 0 0;
+}
+
+.dates .map {
+    margin: 15px 0 0 0;
+    background: rgba(0,0,0,0.2);
+}
+
+.dates .map .display {
+    padding-bottom: 56.25% !important;
+    height: 0;
+}
+
+.dates.bg2 .dateslist {
+}
+
+.dates.bg2 .dateslist li.item {
+}
+
+.dates.bg2 .dateslist li.item:hover {
+}
+
+.dates.bg2 .dateslist li .cal .calendar_links {
+}
+
+.dates.bg2 .dateslist li .title span.venue a:link, .dates.bg2 .dateslist li .title span.venue a:visited {
+    color: var(--css_color2);
+    border-bottom: 1px solid var(--css_color2);
+}
+
+.dates.bg2 .dateslist li .title span.venue a:hover, .dates.bg2 .dateslist li .title span.venue a:active {
+    color: var(--css_color2);
+    border-bottom: 1px solid var(--css_color2);
+}
+
+.canceled-item {
+    text-decoration: line-through;
+    color: #452828; /* Change the color to a muted gray or your preferred color */
+}
+
+
+/* media-queries + device-switches */
+
+
+
+@media screen and (max-width: 860px) {
+
+
+    /* 3 li pro reihe */
+    .itemlist li {
+        width: 30%;
+        width: calc((100% - 40px) / 3);
+        margin: 0 20px 40px 0;
+    }
+
+    .itemlist li:nth-child(4n+4) {
+        margin: 0 20px 20px 0;
+    }
+
+    .itemlist li:nth-child(4n+5) {
+        clear: none;
+    }
+
+    .itemlist li:nth-child(3n+3) {
+        /* 3., 6., 9. etc... */
+        margin: 0 0 20px 0;
+    }
+
+    .itemlist li:nth-child(3n+4) {
+        /* 4., 7., 10. etc... */
+        clear: both;
+    }
+
+    .dates .dateslist li .location span, .dates .dateslist li .location span.city, .dates .dateslist li .location span.venue {
+        display: block;
+        width: 100%;
+    }
+
+}
+
+
+
+@media screen and (max-width: 720px) {
+    /* 2 li pro reihe */ .itemlist li:nth-child(3n+3) {
+        margin:0;
+    }
+
+    .itemlist li:nth-child(3n+4) {
+        clear: none;
+    }
+
+    .itemlist li:nth-child(odd) {
+        float: left;
+        width: 48%;
+        margin: 0 0 40px 0;
+    }
+
+    .itemlist li:nth-child(even) {
+        float: right;
+        width: 48%;
+        margin: 0 0 40px 0;
+    }
+
+    .itemlist li:nth-child(2n+3) {
+        /* 3., 5., 7. etc... */
+        clear: both;
+    }
+
+
+    .dates .dateslist li.item {
+        display: block;
+        padding: 25px 10px;
+    }
+
+    .dates .dateslist li.item:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .dates .dateslist li.row-more {
+        display: none;
+    }
+
+    .dates .dateslist li.item div {
+        display: block;
+    }
+
+    .dates .dateslist li .date {
+        width: 50%;
+        display: block;
+    }
+
+    .dates .dateslist li .location {
+        float: left;
+        width: 55%;
+        display: block;
+    }
+
+    .dates .dateslist li .buttons {
+        float: right;
+        width: 40%;
+        display: block;
+    }
+
+    .dates .dateslist li.has2buttons .buttons {
+        margin-top: -20px;
+    }
+}
+
+
+
+@media screen and (max-width: 480px) {
+    .dates .dateslist li .date {
+        width:100%;
+    }
+
+    .dates .dateslist li .location {
+        width: 100%;
+    }
+
+    .dates .dateslist li .buttons, .dates .dateslist li.has2buttons .buttons {
+        width: 100%;
+        margin: 15px 0 0 0;
+    }
+
+    .dates .itemview .buttons li {
+        display: block;
+        margin: 0;
+    }
+
+    .dates .itemview .buttons li a {
+        width: 100%;
+    }
+
+    .dates .itemview .buttons li a.ticket2 {
+        margin: 0 0 10px 0;
+    }
+
+    .dates .dateslist li .cal .calendar_links {
+        left: -18px;
+        top: 32px;
+    }
+}

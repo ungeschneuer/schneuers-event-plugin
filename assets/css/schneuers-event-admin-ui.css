@@ -1,0 +1,50 @@
+/* Style for meta-field container */
+.meta-field {
+    margin-bottom: 20px;
+}
+
+/* Style for meta-label */
+.meta-label {
+    font-weight: bold;
+    display: block;
+}
+
+/* Style for meta-input elements */
+.meta-input input[type="text"],
+.meta-input input[type="url"],
+.meta-input textarea,
+.meta-input input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Style for radio buttons list */
+.meta-radio-list {
+    list-style: none;
+    padding: 0;
+}
+
+.meta-radio-list li {
+    margin-bottom: 10px;
+}
+
+/* Style for radio buttons */
+.meta-radio-list input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Style for selected radio label */
+.meta-radio-list label.selected {
+    font-weight: bold;
+}
+
+/* Optional: Style for the ticket link input as a button */
+#ticket_link {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
