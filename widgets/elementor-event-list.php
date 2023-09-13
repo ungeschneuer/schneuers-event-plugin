@@ -37,6 +37,11 @@ class Event_List_Widget extends \Elementor\Widget_Base
         // Get today's date
         $today = date('Y-m-d');
         $row_number = 1;
+        $background_color = get_option('background_color'); // Default to white if not set
+        $text_color = get_option('text_color'); // Default to black if not set
+        $button_color = get_option('button_color'); // Default to a blue color if not set
+        $link_color = get_option('link_color'); // Default to white if not set
+        $info_text_color = get_option('info_text_color'); // Default to black if not set
 
         // Query custom posts
         $args = array(
@@ -59,6 +64,14 @@ class Event_List_Widget extends \Elementor\Widget_Base
         // Check if custom posts are found
         if (!empty($custom_posts)) {
             // Start rendering the section
+
+                // Output inline CSS
+            echo '<style>';
+            echo '.dates { color: ' . esc_attr($text_color) . '; }';
+            echo ' a.button.ticket { color: ' . esc_attr($link_color) . '; };';
+            echo '.info{ color: ' . esc_attr($info_text_color) . '; }';
+
+            echo '</style>';
             echo '<section id="dates" class="section bg2 dates" role="region" aria-label="dates"><div class="section_wrapper"><div class="section_content">';
             echo '<div id="dates_blocks" class="dates_blocks clearfix">';
             echo '<div class="dateslist_holder">';
@@ -134,4 +147,3 @@ class Event_List_Widget extends \Elementor\Widget_Base
         }
     }
 }
-?>
