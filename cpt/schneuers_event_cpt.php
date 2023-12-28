@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Register the 'Veranstaltungen' custom post type
  */
@@ -63,7 +64,7 @@ function custom_events_render_fields($post)
     // Set the post title to the default_title
     $post->post_title = get_option('default_title', '');
 
-    ?>
+?>
     <div class="meta_values">
         <div class="meta-field">
             <div class="meta-label"><label for="event_date">Veranstaltungsdatum:</label></div>
@@ -90,7 +91,7 @@ function custom_events_render_fields($post)
             </div>
         </div>
     </div>
-    <?php
+<?php
 }
 
 /**
@@ -260,7 +261,7 @@ add_action('admin_menu', 'custom_events_settings_menu');
 
 function custom_events_render_settings_page()
 {
-    ?>
+?>
     <div class="wrap">
         <h2>Event Einstellungen</h2>
         <form method="post" action="options.php">
@@ -282,7 +283,7 @@ function custom_events_settings_init()
         'custom-events-settings'
     );
 
-    // Define an array of settings and their labels
+    // Define an array of settings and their labels with default values
     $settings = array(
         'default_title'       => 'Standard-Titel',
         'default_geplant'     => 'Standard-Wert für "Geplante Veranstaltungen"',
@@ -291,11 +292,30 @@ function custom_events_settings_init()
         'default_ausverkauft' => 'Standard-Wert für "Ausverkauft"',
         'default_abgesagt'    => 'Standard-Wert für "Abgesagt"',
         'default_no_events'   => 'Standard-Wert für "Keine Veranstaltungen"',
+        'text_color'          => 'Text-Farbe', // Default text color
+        'info_text_color'     => 'Info Textfarbe', // New setting
+        'link_color'          => 'Link Textfarbe', // New setting
     );
+
+
 
     // Loop through the settings array and register each setting and field
     foreach ($settings as $setting_key => $setting_label) {
         register_setting('custom_events_settings_group', $setting_key);
+
+        // Define default values for each setting
+        $default_values = array(
+            'default_title'       => 'Poetry Slam',
+            'default_geplant'     => 'TBA',
+            'default_vvk'         => 'TICKETS',
+            'default_no_vvk'      => 'NUR ABENDKASSE',
+            'default_ausverkauft' => 'NUR ABENDKASSE',
+            'default_abgesagt'    => 'ABGESAGT',
+            'default_no_events'   => 'Keine Veranstaltungen geplant.',
+            'text_color'          => '#00000', // Default text color
+            'info_text_color'     => 'grey',
+            'link_color'          => '#c36',
+        );
 
         add_settings_field(
             $setting_key,
@@ -303,10 +323,18 @@ function custom_events_settings_init()
             'custom_events_default_setting_callback',
             'custom-events-settings',
             'custom_events_settings_section',
-            array('setting_key' => $setting_key)
+            array('setting_key' => $setting_key, 'default_value' => $default_values[$setting_key])
         );
+
+        // Check if the setting is not set, then set its default value
+        if (get_option($setting_key) === false) {
+            $default_value = $default_values[$setting_key];
+            update_option($setting_key, $default_value);
+        }
     }
 }
+
+
 add_action('admin_init', 'custom_events_settings_init');
 
 function custom_events_settings_section_callback()
@@ -319,10 +347,19 @@ function custom_events_default_setting_callback($args)
     $setting_key = $args['setting_key'];
     $setting_value = get_option($setting_key, '');
 
+    if ($setting_key === 'text_color' || $setting_key === 'info_text_color' || $setting_key === 'link_color') {
+        // For color settings, display an input of type "color"
     ?>
-    <input type="text" name="<?php echo $setting_key; ?>" value="<?php echo esc_attr($setting_value); ?>" />
+        <input type="color" name="<?php echo $setting_key; ?>" value="<?php echo esc_attr($setting_value); ?>" />
     <?php
+    } else {
+        // For other settings, display a regular text input
+    ?>
+        <input type="text" name="<?php echo $setting_key; ?>" value="<?php echo esc_attr($setting_value); ?>" />
+<?php
+    }
 }
+
 
 // Retrieve the default event values using a loop
 $default_settings = array(
@@ -333,6 +370,9 @@ $default_settings = array(
     'default_ausverkauft',
     'default_abgesagt',
     'default_no_events',
+    'text_color',
+    'info_text_color', // New setting
+    'link_color', // New setting
 );
 
 $default_values = array();
