@@ -57,6 +57,8 @@ li {
     border-bottom: 1px solid #000;
     overflow-wrap: break-word;
     hyphens: auto;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .dates .dateslist li.row1 {
@@ -94,6 +96,7 @@ li {
 }
 
 .dates .dateslist li .date {
+    width: 15%;
     width: 15%;
     pointer-events: none;
     text-transform: uppercase;
@@ -144,6 +147,7 @@ li {
 }
 
 .dates .dateslist li .title {
+    font-size: 20px;
     font-size: 20px;
     width: auto;
     pointer-events: none;
@@ -207,6 +211,7 @@ li {
 }
 
 .dates .dateslist li .buttons {
+    width: 15%;
     width: 15%;
     padding-left: 5px;
 }
@@ -421,6 +426,8 @@ li {
 
 
 
+
+
 }
 
 
@@ -494,6 +501,11 @@ li {
 
     .dates .dateslist li.has2buttons .buttons {
         margin-top: -20px;
+    }    
+    
+
+    .dates .dateslist li .title {
+        padding: 0;
     }
 
     .dates .dateslist li .title {
